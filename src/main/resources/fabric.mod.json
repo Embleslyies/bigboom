@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "modtest",
+  "version": "${version}",
+  "name": "modtest",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/modtest/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "embles.example.modtest.client.ModtestDataGenerator"
+    ],
+    "client": [
+      "embles.example.modtest.client.ModtestClient"
+    ],
+    "main": [
+      "embles.example.modtest.Modtest"
+    ]
+  },
+  "mixins": [
+    "modtest.mixins.json",
+    {
+      "config": "modtest.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
